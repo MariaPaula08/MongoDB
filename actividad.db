@@ -1,0 +1,433 @@
+use Restaurante
+
+db.createCollection("mesa")
+db.createCollection("facturacion")
+db.createCollection("transacciones")
+
+
+
+db.mesa.insertMany([
+  {
+    "id_mesa": "1",
+    "numeroMesa": "101",
+    "capacidad": "4",
+    "estado": "Disponible"
+  },
+  {
+    "id_mesa": "2",
+    "numeroMesa": "102",
+    "capacidad": "6",
+    "estado": "Ocupada"
+  },
+  {
+    "id_mesa": "3",
+    "numeroMesa": "103",
+    "capacidad": "2",
+    "estado": "Reservada"
+  },
+  {
+    "id_mesa": "4",
+    "numeroMesa": "104",
+    "capacidad": "8",
+    "estado": "Disponible"
+  },
+  {
+    "id_mesa": "5",
+    "numeroMesa": "105",
+    "capacidad": "4",
+    "estado": "Ocupada"
+  },
+  {
+    "id_mesa": "6",
+    "numeroMesa": "106",
+    "capacidad": "6",
+    "estado": "Disponible"
+  },
+  {
+    "id_mesa": "7",
+    "numeroMesa": "107",
+    "capacidad": "4",
+    "estado": "Reservada"
+  },
+  {
+    "id_mesa": "8",
+    "numeroMesa": "108",
+    "capacidad": "2",
+    "estado": "Ocupada"
+  },
+  {
+    "id_mesa": "9",
+    "numeroMesa": "109",
+    "capacidad": "8",
+    "estado": "Disponible"
+  },
+  {
+    "id_mesa": "10",
+    "numeroMesa": "110",
+    "capacidad": "6",
+    "estado": "Reservada"
+  }
+])
+
+
+db.facturacion.insertMany([
+  {
+    "id_facturacion": "1",
+    "hora": "18:30",
+    "fecha": "2023-09-20",
+    "platos": ["Pollo a la Parrilla", "Ensalada César"],
+    "bebidas": ["Refresco de Limón"],
+    "cantidad_platos": "3",
+    "valor_unitario": "$15000",
+    "valor_total": "$45000",
+    "fecha_pedido": "2023-09-20",
+    "hora_solicitud": "18:00",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Sin cebolla",
+    "id_mesa": "2",
+    "id_categoria": "1",
+    "id_caja": "1"
+  },
+  {
+    "id_facturacion": "2",
+    "hora": "19:15",
+    "fecha": "2023-09-21",
+    "platos": ["Pasta Alfredo", "Ensalada Mixta"],
+    "bebidas": ["Agua Mineral"],
+    "cantidad_platos": "4",
+    "valor_unitario": "$14000",
+    "valor_total": "$56000",
+    "fecha_pedido": "2023-09-21",
+    "hora_solicitud": "19:00",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Sin ajo",
+    "id_mesa": "1",
+    "id_categoria": "2",
+    "id_caja": "2"
+  },
+  {
+    "id_facturacion": "3",
+    "hora": "20:00",
+    "fecha": "2023-09-22",
+    "platos": ["Salmón a la Parrilla", "Ensalada de Espinacas"],
+    "bebidas": ["Vino Tinto"],
+    "cantidad_platos": "3",
+    "valor_unitario": "$25000",
+    "valor_total": "$75000",
+    "fecha_pedido": "2023-09-22",
+    "hora_solicitud": "19:30",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Extra de limón",
+    "id_mesa": "4",
+    "id_categoria": "3",
+    "id_caja": "3"
+  },
+  {
+    "id_facturacion": "4",
+    "hora": "21:30",
+    "fecha": "2023-09-23",
+    "platos": ["Hamburguesa Clásica", "Papas Fritas"],
+    "bebidas": ["Gaseosa Cola"],
+    "cantidad_platos": "5",
+    "valor_unitario": "$12000",
+    "valor_total": "$60000",
+    "fecha_pedido": "2023-09-23",
+    "hora_solicitud": "21:00",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Sin ketchup",
+    "id_mesa": "1",
+    "id_categoria": "4",
+    "id_caja": "4"
+  },
+  {
+    "id_facturacion": "5",
+    "hora": "19:45",
+    "fecha": "2023-09-24",
+    "platos": ["Pizza Margarita", "Ensalada César"],
+    "bebidas": ["Cerveza Artesanal"],
+    "cantidad_platos": "3",
+    "valor_unitario": "$17000",
+    "valor_total": "$51000",
+    "fecha_pedido": "2023-09-24",
+    "hora_solicitud": "19:15",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Extra de queso",
+    "id_mesa": "3",
+    "id_categoria": "1",
+    "id_caja": "5"
+  },
+  {
+    "id_facturacion": "6",
+    "hora": "22:00",
+    "fecha": "2023-09-25",
+    "platos": ["Pasta Carbonara", "Ensalada de Frutas"],
+    "bebidas": ["Jugo de Naranja"],
+    "cantidad_platos": "4",
+    "valor_unitario": "$11000",
+    "valor_total": "$44000",
+    "fecha_pedido": "2023-09-25",
+    "hora_solicitud": "21:30",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Extra de piña",
+    "id_mesa": "4",
+    "id_categoria": "2",
+    "id_caja": "6"
+  },
+  {
+    "id_facturacion": "7",
+    "hora": "21:15",
+    "fecha": "2023-09-26",
+    "platos": ["Sushi Variado", "Sopa Miso"],
+    "bebidas": ["Té Verde"],
+    "cantidad_platos": "3",
+    "valor_unitario": "$18000",
+    "valor_total": "$54000",
+    "fecha_pedido": "2023-09-26",
+    "hora_solicitud": "20:45",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Sin wasabi",
+    "id_mesa": "3",
+    "id_categoria": "3",
+    "id_caja": "7"
+  },
+  {
+    "id_facturacion": "8",
+    "hora": "20:30",
+    "fecha": "2023-09-27",
+    "platos": ["Pollo al Curry", "Ensalada de Espinacas"],
+    "bebidas": ["Refresco de Limón"],
+    "cantidad_platos": "4",
+    "valor_unitario": "$16000",
+    "valor_total": "$64000",
+    "fecha_pedido": "2023-09-27",
+    "hora_solicitud": "20:00",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Sin picante",
+    "id_mesa": "2",
+    "id_categoria": "4",
+    "id_caja": "8"
+  },
+  {
+    "id_facturacion": "9",
+    "hora": "19:00",
+    "fecha": "2023-09-28",
+    "platos": ["Lomo Saltado", "Ensalada Mixta"],
+    "bebidas": ["Agua Mineral"],
+    "cantidad_platos": "3",
+    "valor_unitario": "$20000",
+    "valor_total": "$60000",
+    "fecha_pedido": "2023-09-28",
+    "hora_solicitud": "18:30",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Sin cebolla",
+    "id_mesa": "4",
+    "id_categoria": "1",
+    "id_caja": "9"
+  },
+  {
+    "id_facturacion": "10",
+    "hora": "18:45",
+    "fecha": "2023-09-29",
+    "platos": ["Hamburguesa Vegetariana", "Papas Fritas"],
+    "bebidas": ["Gaseosa Cola"],
+    "cantidad_platos": "4",
+    "valor_unitario": "$15000",
+    "valor_total": "$60000",
+    "fecha_pedido": "2023-09-29",
+    "hora_solicitud": "18:15",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Sin mayonesa",
+    "id_mesa": "1",
+    "id_categoria": "2",
+    "id_caja": "10"
+  }
+])
+
+
+db.transacciones.insertMany([
+  {
+    "id_transacciones": "1",
+    "fecha_hora_transaccion": "2023-09-20T10:30:00",
+    "tipo_transaccion": "Ingreso",
+    "descripcion_transaccion": "Venta de productos",
+    "nombre_cuenta": "Cuenta principal",
+    "tipo_cuenta": "Corriente",
+    "saldo_actual": "500000",
+    "fuente_ingresos": "Ventas",
+    "monto_ingreso": "150000",
+    "id_caja": "1"
+  },
+  {
+    "id_transacciones": "2",
+    "fecha_hora_transaccion": "2023-09-21T12:15:00",
+    "tipo_transaccion": "Egreso",
+    "descripcion_transaccion": "Compra de materia prima",
+    "nombre_cuenta": "Cuenta proveedores",
+    "tipo_cuenta": "Corriente",
+    "saldo_actual": "450000",
+    "fuente_ingresos": "Proveedores",
+    "monto_ingreso": "20000",
+    "id_caja": "2"
+  },
+  {
+    "id_transacciones": "3",
+    "fecha_hora_transaccion": "2023-09-22T15:00:00",
+    "tipo_transaccion": "Ingreso",
+    "descripcion_transaccion": "Pago de cliente",
+    "nombre_cuenta": "Cuenta principal",
+    "tipo_cuenta": "Corriente",
+    "saldo_actual": "470000",
+    "fuente_ingresos": "Clientes",
+    "monto_ingreso": "30000",
+    "id_caja": "3"
+  },
+  {
+    "id_transacciones": "4",
+    "fecha_hora_transaccion": "2023-09-23T18:45:00",
+    "tipo_transaccion": "Egreso",
+    "descripcion_transaccion": "Pago de sueldos",
+    "nombre_cuenta": "Cuenta sueldos",
+    "tipo_cuenta": "Ahorro",
+    "saldo_actual": "440000",
+    "fuente_ingresos": "Empleados",
+    "monto_ingreso": "30000",
+    "id_caja": "4"
+  },
+  {
+    "id_transacciones": "5",
+    "fecha_hora_transaccion": "2023-09-24T11:20:00",
+    "tipo_transaccion": "Ingreso",
+    "descripcion_transaccion": "Venta de productos",
+    "nombre_cuenta": "Cuenta principal",
+    "tipo_cuenta": "Corriente",
+    "saldo_actual": "470000",
+    "fuente_ingresos": "Ventas",
+    "monto_ingreso": "25000",
+    "id_caja": "5"
+  },
+  {
+    "id_transacciones": "6",
+    "fecha_hora_transaccion": "2023-09-25T14:00:00",
+    "tipo_transaccion": "Egreso",
+    "descripcion_transaccion": "Compra de utensilios de cocina",
+    "nombre_cuenta": "Cuenta gastos generales",
+    "tipo_cuenta": "Corriente",
+    "saldo_actual": "440000",
+    "fuente_ingresos": "Proveedores",
+    "monto_ingreso": "30000",
+    "id_caja": "6"
+  },
+  {
+    "id_transacciones": "7",
+    "fecha_hora_transaccion": "2023-09-26T17:30:00",
+    "tipo_transaccion": "Ingreso",
+    "descripcion_transaccion": "Pago de cliente",
+    "nombre_cuenta": "Cuenta principal",
+    "tipo_cuenta": "Corriente",
+    "saldo_actual": "470000",
+    "fuente_ingresos": "Clientes",
+    "monto_ingreso": "30000",
+    "id_caja": "7"
+  },
+  {
+    "id_transacciones": "8",
+    "fecha_hora_transaccion": "2023-09-27T19:00:00",
+    "tipo_transaccion": "Egreso",
+    "descripcion_transaccion": "Pago de servicios públicos",
+    "nombre_cuenta": "Cuenta servicios",
+    "tipo_cuenta": "Corriente",
+    "saldo_actual": "440000",
+    "fuente_ingresos": "Servicios",
+    "monto_ingreso": "30000",
+    "id_caja": "8"
+  },
+  {
+    "id_transacciones": "9",
+    "fecha_hora_transaccion": "2023-09-28T09:45:00",
+    "tipo_transaccion": "Ingreso",
+    "descripcion_transaccion": "Venta de productos",
+    "nombre_cuenta": "Cuenta principal",
+    "tipo_cuenta": "Corriente",
+    "saldo_actual": "470000",
+    "fuente_ingresos": "Ventas",
+    "monto_ingreso": "30000",
+    "id_caja": "9"
+  },
+  {
+    "id_transacciones": "10",
+    "fecha_hora_transaccion": "2023-09-29T13:20:00",
+    "tipo_transaccion": "Egreso",
+    "descripcion_transaccion": "Compra de materia prima",
+    "nombre_cuenta": "Cuenta proveedores",
+    "tipo_cuenta": "Corriente",
+    "saldo_actual": "440000",
+    "fuente_ingresos": "Proveedores",
+    "monto_ingreso": "30000",
+    "id_caja": "10"
+  }
+])
+
+db.mesa.updateOne(
+    {
+        "estado":"Ocupada"
+    },
+    {
+        $set:
+       {
+        "estado":"Disponible"
+       } 
+    }
+    
+    )
+
+db.facturacion.updateOne(
+    {
+        "fecha":"2023-09-20"
+    },
+    {
+        $set:
+       {
+        "fecha":"2023-11-15"
+       } 
+    }
+    
+    )
+
+db.transacciones.updateOne(
+    {
+        "tipo_cuenta":"Corriente"
+    },
+    {
+        $set:
+       {
+        "tipo_cuenta":"Ahorro"
+       } 
+    }
+    
+    )
+
+db.mesa.deleteOne({
+        "numeroMesa": "108"
+    }
+    )
+
+db.facturacion.deleteOne({
+        "id_facturacion": "1"
+    }
+    )
+    
+db.transacciones.deleteOne({
+        "saldo_actual": "440000"
+    }
+    )
+
+db.mesa.find(
+        {"capacidad": "8"}
+    )
+
+db.facturacion.find(
+        {"hora": "18:45"}
+    )
+db.transacciones.find(
+        {"fuente_ingresos": "Proveedores"}
+    )

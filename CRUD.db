@@ -1,0 +1,92 @@
+use CRUD
+
+db.createCollection("Usuarios")
+db.createCollection("Materias")
+db.createCollection("Notas")
+
+
+db.Usuarios.insertMany([
+    {
+        "Nombre":"Maria Paula Embus",
+        "Edad":"22",
+        "Correo":"paula@gmail.com",
+        "Telefono":"3202472368"
+    },
+    {
+        "Nombre":"Laura Ximena Embus",
+        "Edad":"22",
+        "Correo":"xiemna@gmail.com",
+        "Telefono":"3107702768"
+    },
+    {
+        "Nombre":"Omar Andres Polanco",
+        "Edad":"16",
+        "Correo":"andreapolaco@gmail.com",
+        "Telefono":"3154968752"
+    },
+    {
+        "Nombre":"Monica Andrea Polanco",
+        "Edad":"36",
+        "Correo":"andreapo@gmail.com",
+        "Telefono":"3124846193"
+    },
+    {
+        "Nombre":"Luz Stella Suarez",
+        "Edad":"52",
+        "Correo":"luzste@gmail.com",
+        "Telefono":"3128819399"
+    }
+
+])
+
+
+db.Materias.insertMany([
+    {
+        "Nombre de la materia": "Programacion",
+        "Duracion": "6 meses"
+    },
+    {
+        "Nombre de la materia": "Fisica",
+        "Duracion": "5 meses"
+    },
+    {
+        "Nombre de la materia": "Emprendimiento",
+        "Duracion": "4 meses"
+    },
+    {
+        "Nombre de la materia": "Base de datos",
+        "Duracion": "6 meses"
+    },
+    {
+        "Nombre de la materia": "Proyecto",
+        "Duracion": "4 meses"
+    }
+])
+
+db.Notas.insertMany([
+    {
+        "Materia": "Proyecto",
+        "Nota": "4.0",
+        "Instructor": "ROcio de Carmen"
+    },
+    {
+        "Materia": "Fisica",
+        "Nota": "3.5",
+        "Instructor": "Marly Johana"
+    },
+    {
+        "Materia": "Programacion",
+        "Nota": "4.0",
+        "Instructor": "Hector Dvid Toledo"
+    },
+    {
+        "Materia": "Ingles",
+        "Nota": "3.0",
+        "Instructor": "Andres Felipe"
+    },
+    {
+        "Materia": "Base de datos",
+        "Nota": "3.5",
+        "Instructor": "Jimmy Alexander Lombana"
+    }
+])

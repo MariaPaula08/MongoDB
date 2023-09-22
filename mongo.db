@@ -1,0 +1,19 @@
+db.Usuarios.insertOne({
+    "Nombre":"Camila Martinez",
+    "Email":"camilita@gmail.com",
+    "Edad":30
+})
+
+db.Materias.insertMany([
+    {
+        "Asiganatura":"Matematicas",
+        "Docente":"Hector Toledo",
+        "Periodo":"8"
+    },
+    {
+        "Asiganatura":"Fisica",
+        "Docente":"Gilberto",
+        "Periodo":"10"
+    }
+
+])

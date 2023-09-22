@@ -1,0 +1,135 @@
+
+
+db.inventario.insertOne({
+    "id_inventario":"1",
+    "nombre":"Carne",
+    "cantidad_en_stock":"100",
+    "fecha_reposicion":"2023-09-11",
+    "id_proveedores" :"101"
+})
+
+db.proveedores.insertOne({
+    "id_proveedores" :"101",
+    "id_materiaPrima" :"201",
+    "nombre":"Camilo",
+    "contacto" :"3202472368",
+    "empresa" :"HuilaSur",
+    "correo ":"camilote@gmail.com",
+    "direccion" :"carrera 5 # 25- 80",
+    "total_productos" :"20",
+    "historial_compras":"2",
+    "id_inventario":"1"
+})
+
+db.materiaPrima.insertOne({
+    "id_materiaPrima" :"202",
+    "nombre":"Lentejas",
+    "descripcion":"Descripción de Materia Prima A",
+    "precio_unitario ":"$4.000",
+    "cantidad_insumo":"100 kg",
+    "categoria ":"Categoria 1",
+    "ingredientes":"Lentejas",
+    "producto_imagen":"imagen1.png",
+    "id_ventas":"302"
+})
+
+db.usuarios.insertOne({
+    id_usuarios :"",
+    nombre_usuario :"",
+    numero_identificacion :"",
+    contraseña :"",
+    nivel_acceso :"",
+    fechaRegistro :"",
+    fecha_hora_apertura:"",
+    fecha_hora_cierre:"",
+    saldo_inicial :"",
+    saldo_final :"",
+    venta_totales :"",
+    fecha_contratacion:"",
+    horario:"",
+    salario :"",
+    contacto:"",
+    fechaHoraReserva:"",
+    numComensales :"",
+    mesa:"",
+    id_mesas:""
+})
+
+db.venta.insertOne({
+   id_venta:"",
+    fechaVenta :"",
+    Cajero :"",
+    totalVenta :"",
+    metodoPago:"",
+    mesa :"",
+    productos_vendidos:"",
+    cantidad :"",
+    precio_unitario:"",
+    id_usuarios:"",
+    id_mesa:"",
+    id_facturacion:"" 
+})
+db.mesa.insertOne({
+    id_mesa :"",
+    numeroMesa :"",
+    capacidad:"",
+    estado:""
+})
+db.facturacion.insertOne({
+    id_facturacion :"",
+    hora :"",
+    fecha :"",
+    platos:"",
+    bebidas:"",
+    cantidad_platos :"",
+    valor_unitario :"",
+    valor_total :"",
+    fecha_pedido :"",
+    hora_solicitud :"",
+    estado_pedido:"",
+    notas_adicionales:"",
+    id_mesa:"",
+    id_categoria:"",
+    id_caja:""
+})
+db.transacciones.insertOne({
+    id_transacciones :"",
+    fecha_hora_transaccion:"",
+    tipo_transaccion:"",
+    descripcion_transaccion :"",
+    nombre_cuenta:"",
+    tipo_cuenta:"",
+    saldo_actual:"",
+    fuente_ingresos:"",
+    monto_ingreso:"",
+    id_caja:""
+})
+db.caja.insertOne({
+    id_caja :"",
+    nombre_plato:"",
+    precio:"",
+    tipo_pago:"",
+    id_facturacion:"",
+    id_gastos:"" 
+})
+db.gastos.insertOne({
+    id_gastos :"",
+    tipo_gastos:"",
+    fecha:"",
+    monto:"",
+    descripcion :"",
+    fecha_reporte :"",
+    resumen_ingresos_totales:"",
+    resumen_gastos_totales:"",
+    ganancias_netas:"",
+    otros_indicadores :""
+})
+db.categoria.insertOne({
+    id_categoria :"",
+    nombre_plato:"",
+    descripcion:"",
+    precio:"",
+    tipo_plato :"",
+    ingredientes :"",
+    categoria_imagen:""
+})
