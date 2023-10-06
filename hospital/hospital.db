@@ -4,6 +4,164 @@ db.createCollection("laboradores")
 db.createCollection("citas")
 db.createCollection("medicamentos")
 db.createCollection("autorizaciones")
+db.createCollection("diasAtencion")
+
+db.diasAtencion.insertOne({
+    "nombre": "Felix Rodríguez",  
+    "especialidad": "Médico General",
+    "horario_disponible": ["Lunes 9:00 AM - 5:00 PM", "Miércoles 1:00 PM - 7:00 PM"],
+    "fecha":"2023-10-20"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "María García", 
+    "especialidad": "Enfermera",
+    "horario_disponible": ["Lunes 9:00 AM - 5:00 PM", "Miércoles 1:00 PM - 7:00 PM"],
+    "fecha": "2023-10-20"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Ana López", 
+    "especialidad": "Psicóloga",
+    "horario_disponible": ["Martes 10:00 AM - 4:00 PM", "Jueves 2:00 PM - 8:00 PM"],
+    "fecha": "2023-10-21"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Luis Martínez", 
+    "especialidad": "Fisioterapeuta",
+    "horario_disponible": ["Lunes 8:30 AM - 4:30 PM", "Miércoles 12:00 PM - 6:00 PM"],
+    "fecha": "2023-10-22"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Dr. Carlos Rodríguez",
+    "especialidad": "Odontólogo",
+    "horario_disponible": ["Martes 9:30 AM - 5:30 PM", "Jueves 1:30 PM - 7:30 PM"],
+    "fecha": "2023-10-23"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Laura Sánchez", 
+    "especialidad": "Nutricionista",
+    "horario_disponible": ["Lunes 10:30 AM - 4:30 PM", "Miércoles 2:30 PM - 8:30 PM"],
+    "fecha": "2023-10-24"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Pedro Gómez", 
+    "especialidad": "Cirujano",
+    "horario_disponible": ["Martes 8:00 AM - 4:00 PM", "Jueves 12:00 PM - 6:00 PM"],
+    "fecha": "2023-10-25"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Sofía Torres",
+    "especialidad": "Cardiólogo",
+    "horario_disponible": ["Lunes 9:00 AM - 5:00 PM", "Miércoles 1:00 PM - 7:00 PM"],
+    "fecha": "2023-10-26"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Jorge Vargas", 
+    "especialidad": "Ginecólogo",
+    "horario_disponible": ["Martes 10:00 AM - 4:00 PM", "Jueves 2:00 PM - 8:00 PM"],
+    "fecha": "2023-10-27"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Silvia Díaz", 
+    "especialidad": "Dermatólogo",
+    "horario_disponible": ["Lunes 8:30 AM - 4:30 PM", "Miércoles 12:00 PM - 6:00 PM"],
+    "fecha": "2023-10-28"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Eduardo Ramírez", 
+    "especialidad": "Oftalmólogo",
+    "horario_disponible": ["Martes 9:30 AM - 5:30 PM", "Jueves 1:30 PM - 7:30 PM"],
+    "fecha": "2023-10-29"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Carmen Mendoza", 
+    "especialidad": "Psiquiatra",
+    "horario_disponible": ["Lunes 10:30 AM - 4:30 PM", "Miércoles 2:30 PM - 8:30 PM"],
+    "fecha": "2023-10-30"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Héctor Castillo", 
+    "especialidad": "Ortopedista",
+    "horario_disponible": ["Martes 8:00 AM - 4:00 PM", "Jueves 12:00 PM - 6:00 PM"],
+    "fecha": "2023-10-31"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Patricia Fernández", 
+     "especialidad": "Urología",
+    "horario_disponible": ["Lunes 9:00 AM - 5:00 PM", "Miércoles 1:00 PM - 7:00 PM"],
+    "fecha": "2023-11-01"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Ricardo Silva", 
+    "especialidad": "Pediatra",
+    "horario_disponible": ["Martes 10:00 AM - 4:00 PM", "Jueves 2:00 PM - 8:00 PM"],
+    "fecha": "2023-11-02"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Isabel Rojas",
+     "especialidad": "Neurólogo",
+    "horario_disponible": ["Lunes 8:30 AM - 4:30 PM", "Miércoles 12:00 PM - 6:00 PM"],
+    "fecha": "2023-11-03"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Miguel González",  
+    "especialidad": "Cirujano Plástico",
+    "horario_disponible": ["Martes 9:30 AM - 5:30 PM", "Jueves 1:30 PM - 7:30 PM"],
+    "fecha": "2023-11-04"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Cecilia Pérez",
+    "especialidad": "Dentista",
+    "horario_disponible": ["Lunes 10:30 AM - 4:30 PM", "Miércoles 2:30 PM - 8:30 PM"],
+    "fecha": "2023-11-05"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Antonio López",
+    "especialidad": "Enfermero",
+    "horario_disponible": ["Martes 8:00 AM - 4:00 PM", "Jueves 12:00 PM - 6:00 PM"],
+    "fecha": "2023-11-06"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Verónica Martínez", 
+    "especialidad": "Fisioterapeuta",
+    "horario_disponible": ["Lunes 9:00 AM - 5:00 PM", "Miércoles 1:00 PM - 7:00 PM"],
+    "fecha": "2023-11-07"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Luisa Sánchez", 
+    "especialidad": "Nutricionista" ,
+    "horario_disponible": ["Martes 10:00 AM - 4:00 PM", "Jueves 2:00 PM - 8:00 PM"],
+    "fecha": "2023-11-08"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Raúl Gómez", 
+    "especialidad": "Nutricionista",
+    "horario_disponible": ["Lunes 8:30 AM - 4:30 PM", "Miércoles 12:00 PM - 6:00 PM"],
+    "fecha": "2023-11-09"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Lucía Torres", 
+     "especialidad": "Ginecóloga",
+    "horario_disponible": ["Martes 9:30 AM - 5:30 PM", "Jueves 1:30 PM - 7:30 PM"],
+    "fecha": "2023-11-10"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Lucía Torres", 
+    "especialidad": "Dermatólogo",
+    "horario_disponible": ["Lunes 10:30 AM - 4:30 PM", "Miércoles 2:30 PM - 8:30 PM"],
+    "fecha": "2023-11-11"
+  })
+db.diasAtencion.insertOne({
+    "nombre": "Elena Ramírez", 
+    "especialidad": "Oftalmóloga",
+    "horario_disponible": ["Lunes 10:30 AM - 4:30 PM", "Miércoles 2:30 PM - 8:30 PM"],
+    "fecha": "2023-11-11"
+  })
+
+
+
+
+
+
 
 db.laboradores.insertOne({
     "nombre": "Felix Rodríguez", 
@@ -288,103 +446,131 @@ db.citas.insertOne({
 
 db.medicamentos.insertOne({
     "nombre de medicamento": "Paracetamol",
-    "nombre del paciente": "Juan Pérez"
+    "nombre del paciente": "Juan Pérez",
+    "fecha de vencimiento": "2023-12-31"
+    
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Ibuprofeno",
-    "nombre del paciente": "Ana Sánchez"
+    "nombre del paciente": "Ana Sánchez",
+    "fecha de vencimiento": "2023-11-15"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Amoxicilina",
-    "nombre del paciente": "Carlos Rodríguez"
+    "nombre del paciente": "Carlos Rodríguez",
+    "fecha de vencimiento": "2023-10-20"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Omeprazol",
-    "nombre del paciente": "María González"
+    "nombre del paciente": "María González",
+    "fecha de vencimiento": "2023-09-05",
+    "fecha de vencimiento": "2023-12-15"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Atorvastatina",
-    "nombre del paciente": "Laura Martínez"
+    "nombre del paciente": "Laura Martínez",
+"fecha de vencimiento": "2023-11-30"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Loratadina",
-    "nombre del paciente": "Pedro Gómez"
+    "nombre del paciente": "Pedro Gómez",
+"fecha de vencimiento": "2023-10-10"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Metformina",
-    "nombre del paciente": "Elena Fernández"
+    "nombre del paciente": "Elena Fernández",
+"fecha de vencimiento": "2023-09-25",
+"fecha de vencimiento": "2023-12-20"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Simvastatina",
-    "nombre del paciente": "José López"
+    "nombre del paciente": "José López",
+"fecha de vencimiento": "2023-11-10"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Diazepam",
-    "nombre del paciente": "Silvia Torres"
+    "nombre del paciente": "Silvia Torres",
+"fecha de vencimiento": "2023-10-05"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Ranitidina",
-    "nombre del paciente": "Roberto Vargas"
+    "nombre del paciente": "Roberto Vargas",
+"fecha de vencimiento": "2023-09-15"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Cetirizina",
-    "nombre del paciente": "Isabel Núñez"
+    "nombre del paciente": "Isabel Núñez",
+"fecha de vencimiento": "2023-12-25"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Losartan",
-    "nombre del paciente": "Sandra Mendoza"
+    "nombre del paciente": "Sandra Mendoza",
+"fecha de vencimiento": "2023-11-05"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Clonazepam",
-    "nombre del paciente": "Hugo Silva"
+    "nombre del paciente": "Hugo Silva",
+"fecha de vencimiento": "2023-10-30"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Metoprolol",
-    "nombre del paciente": "Marta Guzmán"
+    "nombre del paciente": "Marta Guzmán",
+"fecha de vencimiento": "2023-09-10"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Pantoprazol",
-    "nombre del paciente": "Javier Romero"
+    "nombre del paciente": "Javier Romero",
+"fecha de vencimiento": "2023-12-10"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Diclofenaco",
-    "nombre del paciente": "Patricia Medina"
+    "nombre del paciente": "Patricia Medina",
+"fecha de vencimiento": "2023-11-20"
 })
 db.medicamentos.insertOne({
      "nombre de medicamento": "Furosemida",
-    "nombre del paciente": "Luis Castillo"
+    "nombre del paciente": "Luis Castillo",
+"fecha de vencimiento": "2023-10-15"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Aspirina",
-    "nombre del paciente": "Ana Morales"
+    "nombre del paciente": "Ana Morales",
+"fecha de vencimiento": "2023-09-30"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Ciprofloxacino",
-    "nombre del paciente": "Juan Pérez"
+    "nombre del paciente": "Juan Pérez",
+"fecha de vencimiento": "2023-12-05"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Ondansetron",
-    "nombre del paciente": "Carlos Rodríguez"
+    "nombre del paciente": "Carlos Rodríguez",
+"fecha de vencimiento": "2023-11-25"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Dexametasona",
-    "nombre del paciente": "María González"
+    "nombre del paciente": "María González",
+"fecha de vencimiento": "2023-10-01"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Metoclopramida",
-    "nombre del paciente": "Laura Martínez"
+    "nombre del paciente": "Laura Martínez",
+"fecha de vencimiento": "2023-10-01"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Insulina",
-    "nombre del paciente": "Pedro Gómez"
+    "nombre del paciente": "Pedro Gómez",
+"fecha de vencimiento": "2023-09-20"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Warfarina",
-    "nombre del paciente": "Elena Fernández"
+    "nombre del paciente": "Elena Fernández",
+"fecha de vencimiento": "2023-12-01"
 })
 db.medicamentos.insertOne({
     "nombre de medicamento": "Pañales",
-    "nombre del paciente": "Camila Rojas"
+    "nombre del paciente": "Camila Rojas",
+"fecha de vencimiento": "2023-12-01"
 })
 
 
@@ -588,4 +774,30 @@ db.autorizaciones.insertOne({
     "nombre de especialista": "Elena Ramírez",
     "especialidad": "Oftalmóloga"
 })
+
+
+db.laboradores.find(
+    {"especialidad": "Nutricionista"}
+)
+
+db.citas.find(
+    {"fecha": "2023-10-10"}
+)
+
+db.autorizaciones.find(
+    {"especialidad": "Nutricionista"}
+)
+
+db.medicamentos.find(
+    {"nombre de medicamento": "Amoxicilina"}
+)
+db.medicamentos.find(
+    {"fecha de vencimiento": "2023-12-01"}
+)
+
+
+db.diasAtencion.find(
+    {"horario_disponible": ["Lunes 9:00 AM - 5:00 PM", "Miércoles 1:00 PM - 7:00 PM"],
+    "fecha": "2023-10-20"}
+)
 
