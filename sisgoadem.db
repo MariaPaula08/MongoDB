@@ -1,0 +1,956 @@
+use Sisgoadem
+
+db.createCollection("inventario")
+db.createCollection("proveedores")
+db.createCollection("materiaPrima")
+db.createCollection("usuarios")
+db.createCollection("venta")
+db.createCollection("mesa")
+db.createCollection("facturacion")
+db.createCollection("transacciones")
+db.createCollection("caja")
+db.createCollection("gastos")
+db.createCollection("categoria")
+
+db.inventario.insertOne({
+    "id_inventario":"1",
+    "nombre":"Carne",
+    "cantidad_en_stock":"100",
+    "fecha_reposicion":"2023-09-11",
+    "id_proveedores" :"101"
+  })
+  db.inventario.insertOne({
+    "id_inventario": "2",
+    "nombre": "Pollo",
+    "cantidad_en_stock": "120",
+    "fecha_reposicion": "2023-09-12",
+    "id_proveedores": "102"
+  })
+  db.inventario.insertOne({
+    "id_inventario": "3",
+    "nombre": "Pescado",
+    "cantidad_en_stock": "80",
+    "fecha_reposicion": "2023-09-13",
+    "id_proveedores": "103"
+  })
+  db.inventario.insertOne({
+    "id_inventario": "4",
+    "nombre": "Papas",
+    "cantidad_en_stock": "200",
+    "fecha_reposicion": "2023-09-14",
+    "id_proveedores": "104"
+  })
+  db.inventario.insertOne({
+    "id_inventario": "5",
+    "nombre": "Lechuga",
+    "cantidad_en_stock": "50",
+    "fecha_reposicion": "2023-09-15",
+    "id_proveedores": "105"
+  })
+  db.inventario.insertOne({
+    "id_inventario": "6",
+    "nombre": "Tomate",
+    "cantidad_en_stock": "70",
+    "fecha_reposicion": "2023-09-16",
+    "id_proveedores": "106"
+  })
+  db.inventario.insertOne({
+    "id_inventario": "7",
+    "nombre": "Zanahoria",
+    "cantidad_en_stock": "90",
+    "fecha_reposicion": "2023-09-17",
+    "id_proveedores": "107"
+  })
+  
+
+db.proveedores.insertOne({
+    "id_proveedores" :"101",
+    "id_materiaPrima" :"201",
+    "nombre":"Camilo",
+    "contacto" :"3202472368",
+    "empresa" :"HuilaSur",
+    "correo ":"camilote@gmail.com",
+    "direccion" :"carrera 5 # 25- 80",
+    "total_productos" :"20",
+    "historial_compras":"2",
+    "id_inventario":"1"
+  })
+  db.proveedores.insertOne({
+    "id_proveedores": "102",
+    "id_materiaPrima": "202",
+    "nombre": "Laura",
+    "contacto": "3105557890",
+    "empresa": "Agrícola Santa Clara",
+    "correo": "laura@gmail.com",
+    "direccion": "Calle 10 #15-30",
+    "total_productos": "15",
+    "historial_compras": "4",
+    "id_inventario": "2"
+  })
+  db.proveedores.insertOne({
+    "id_proveedores": "103",
+    "id_materiaPrima": "203",
+    "nombre": "Diego",
+    "contacto": "3112345678",
+    "empresa": "Productos del Campo",
+    "correo": "diego@hotmail.com",
+    "direccion": "Carrera 20 #30-40",
+    "total_productos": "25",
+    "historial_compras": "3",
+    "id_inventario": "3"
+  })
+  db.proveedores.insertOne({
+    "id_proveedores": "104",
+    "id_materiaPrima": "204",
+    "nombre": "Sandra",
+    "contacto": "3123456789",
+    "empresa": "Verduras Frescas",
+    "correo": "sandra@yahoo.com",
+    "direccion": "Avenida 5 #10-15",
+    "total_productos": "18",
+    "historial_compras": "5",
+    "id_inventario": "4"
+  })
+  db.proveedores.insertOne({
+    "id_proveedores": "105",
+    "id_materiaPrima": "205",
+    "nombre": "Carlos",
+    "contacto": "3134567890",
+    "empresa": "Lácteos del Campo",
+    "correo": "carlos@gmail.com",
+    "direccion": "Diagonal 8 #12-25",
+    "total_productos": "22",
+    "historial_compras": "6",
+    "id_inventario": "5"
+  })
+  db.proveedores.insertOne({
+    "id_proveedores": "106",
+    "id_materiaPrima": "206",
+    "nombre": "Ana",
+    "contacto": "3145678901",
+    "empresa": "Frutas Exóticas",
+    "correo": "ana@hotmail.com",
+    "direccion": "Transversal 12 #18-30",
+    "total_productos": "21",
+    "historial_compras": "4",
+    "id_inventario": "6"
+  })
+  db.proveedores.insertOne({
+    "id_proveedores": "107",
+    "id_materiaPrima": "207",
+    "nombre": "Mario",
+    "contacto": "3156789012",
+    "empresa": "Carnes Frescas",
+    "correo": "mario@yahoo.com",
+    "direccion": "Calle 15 #20-35",
+    "total_productos": "19",
+    "historial_compras": "3",
+    "id_inventario": "7"
+  })
+  
+  
+
+db.materiaPrima.insertOne({
+    "id_materiaPrima" :"202",
+    "nombre":"Lentejas",
+    "descripcion":"Descripción de Materia Prima A",
+    "precio_unitario ":"$4.000",
+    "cantidad_insumo":"100 kg",
+    "categoria ":"Categoria 1",
+    "ingredientes":"Lentejas",
+    "producto_imagen":"imagen1.png",
+    "id_ventas":"302"
+  })
+  db.materiaPrima.insertOne({
+    "id_materiaPrima": "203",
+    "nombre": "Arroz",
+    "descripcion": "Descripción de Materia Prima B",
+    "precio_unitario": "$2.500",
+    "cantidad_insumo": "50 kg",
+    "categoria": "Categoría 2",
+    "ingredientes": "Arroz",
+    "producto_imagen": "imagen2.png",
+    "id_ventas": "303"
+  })
+  db.materiaPrima.insertOne({
+    "id_materiaPrima": "204",
+    "nombre": "Papas",
+    "descripcion": "Descripción de Materia Prima C",
+    "precio_unitario": "$1.800",
+    "cantidad_insumo": "70 kg",
+    "categoria": "Categoría 1",
+    "ingredientes": "Papas",
+    "producto_imagen": "imagen3.png",
+    "id_ventas": "304"
+  })
+  db.materiaPrima.insertOne({
+    "id_materiaPrima": "205",
+    "nombre": "Maíz",
+    "descripcion": "Descripción de Materia Prima D",
+    "precio_unitario": "$3.000",
+    "cantidad_insumo": "60 kg",
+    "categoria": "Categoría 2",
+    "ingredientes": "Maíz",
+    "producto_imagen": "imagen4.png",
+    "id_ventas": "305"
+  })
+  db.materiaPrima.insertOne({
+    "id_materiaPrima": "206",
+    "nombre": "Frijoles",
+    "descripcion": "Descripción de Materia Prima E",
+    "precio_unitario": "$4.500",
+    "cantidad_insumo": "40 kg",
+    "categoria": "Categoría 1",
+    "ingredientes": "Frijoles",
+    "producto_imagen": "imagen5.png",
+    "id_ventas": "306"
+  })
+  db.materiaPrima.insertOne({
+    "id_materiaPrima": "207",
+    "nombre": "Avena",
+    "descripcion": "Descripción de Materia Prima F",
+    "precio_unitario": "$3.800",
+    "cantidad_insumo": "55 kg",
+    "categoria": "Categoría 2",
+    "ingredientes": "Avena",
+    "producto_imagen": "imagen6.png",
+    "id_ventas": "307"
+  })
+  
+
+
+db.usuarios.insertOne({
+    "id_usuarios": "1",
+    "nombre_usuario": "juanito123",
+    "numero_identificacion": "123456789",
+    "contraseña": "password123",
+    "nivel_acceso": "admin",
+    "fechaRegistro": "2023-09-20",
+    "fecha_hora_apertura": "2023-09-20T08:00",
+    "fecha_hora_cierre": "2023-09-20T18:00",
+    "saldo_inicial": "500000",
+    "saldo_final": "550000",
+    "venta_totales": "10",
+    "fecha_contratacion": "2023-09-10",
+    "horario": "8:00 AM - 6:00 PM",
+    "salario": "$1000000",
+    "contacto": "3109876543",
+    "fechaHoraReserva": "2023-09-20T14:00",
+    "numComensales": "4",
+    "mesa": "2",
+    "id_mesas": "2"
+  })
+  db.usuarios.insertOne({
+    "id_usuarios": "2",
+    "nombre_usuario": "lucia456",
+    "numero_identificacion": "987654321",
+    "contraseña": "clave123",
+    "nivel_acceso": "cajero",
+    "fechaRegistro": "2023-09-22",
+    "fecha_hora_apertura": "2023-09-22T10:00",
+    "fecha_hora_cierre": "2023-09-22T20:00",
+    "saldo_inicial": "300000",
+    "saldo_final": "350000",
+    "venta_totales": "7",
+    "fecha_contratacion": "2023-09-15",
+    "horario": "10:00 AM - 8:00 PM",
+    "salario": "$800000",
+    "contacto": "3156789012",
+    "fechaHoraReserva": "2023-09-22T16:00",
+    "numComensales": "2",
+    "mesa": "1",
+    "id_mesas": "1"
+  })
+  db.usuarios.insertOne({
+    "id_usuarios": "3",
+    "nombre_usuario": "diego789",
+    "numero_identificacion": "567890123",
+    "contraseña": "diegopass",
+    "nivel_acceso": "mesero",
+    "fechaRegistro": "2023-09-18",
+    "fecha_hora_apertura": "2023-09-18T09:00",
+    "fecha_hora_cierre": "2023-09-18T19:00",
+    "saldo_inicial": "200000",
+    "saldo_final": "220000",
+    "venta_totales": "5",
+    "fecha_contratacion": "2023-09-08",
+    "horario": "9:00 AM - 7:00 PM",
+    "salario": "$600000",
+    "contacto": "3201234567",
+    "fechaHoraReserva": "2023-09-18T12:00",
+    "numComensales": "6",
+    "mesa": "3",
+    "id_mesas": "3"
+  })
+  db.usuarios.insertOne({
+    "id_usuarios": "4",
+    "nombre_usuario": "laura333",
+    "numero_identificacion": "234567890",
+    "contraseña": "laurapass",
+    "nivel_acceso": "cajero",
+    "fechaRegistro": "2023-09-21",
+    "fecha_hora_apertura": "2023-09-21T11:00",
+    "fecha_hora_cierre": "2023-09-21T21:00",
+    "saldo_inicial": "400000",
+    "saldo_final": "450000",
+    "venta_totales": "8",
+    "fecha_contratacion": "2023-09-12",
+    "horario": "11:00 AM - 9:00 PM",
+    "salario": "$900000",
+    "contacto": "3212345678",
+    "fechaHoraReserva": "2023-09-21T18:00",
+    "numComensales": "3",
+    "mesa": "2",
+    "id_mesas": "2"
+  })
+  db.usuarios.insertOne({
+    "id_usuarios": "5",
+    "nombre_usuario": "pedrito456",
+    "numero_identificacion": "345678901",
+    "contraseña": "pedropass",
+    "nivel_acceso": "mesero",
+    "fechaRegistro": "2023-09-19",
+    "fecha_hora_apertura": "2023-09-19T09:00",
+    "fecha_hora_cierre": "2023-09-19T19:00",
+    "saldo_inicial": "250000",
+    "saldo_final": "270000",
+    "venta_totales": "6",
+    "fecha_contratacion": "2023-09-09",
+    "horario": "9:00 AM - 7:00 PM",
+    "salario": "$700000",
+    "contacto": "3223456789",
+    "fechaHoraReserva": "2023-09-19T13:00",
+    "numComensales": "5",
+    "mesa": "4",
+    "id_mesas": "4"
+  })
+  db.usuarios.insertOne({
+    "id_usuarios": "6",
+    "nombre_usuario": "ana222",
+    "numero_identificacion": "456789012",
+    "contraseña": "anapass",
+    "nivel_acceso": "admin",
+    "fechaRegistro": "2023-09-23",
+    "fecha_hora_apertura": "2023-09-23T08:00",
+    "fecha_hora_cierre": "2023-09-23T18:00",
+    "saldo_inicial": "550000",
+    "saldo_final": "600000",
+    "venta_totales": "11",
+    "fecha_contratacion": "2023-09-11",
+    "horario": "8:00 AM - 6:00 PM",
+    "salario": "$1100000",
+    "contacto": "3234567890",
+    "fechaHoraReserva": "2023-09-23T15:00",
+    "numComensales": "7",
+    "mesa": "1",
+    "id_mesas": "1"
+  })
+  db.usuarios.insertOne({
+    "id_usuarios": "7",
+    "nombre_usuario": "carlos777",
+    "numero_identificacion": "567890123",
+    "contraseña": "carlospass",
+    "nivel_acceso": "cajero",
+    "fechaRegistro": "2023-09-24",
+    "fecha_hora_apertura": "2023-09-24T10:00",
+    "fecha_hora_cierre": "2023-09-24T20:00",
+    "saldo_inicial": "300000",
+    "saldo_final": "350000",
+    "venta_totales": "9",
+    "fecha_contratacion": "2023-09-14",
+    "horario": "10:00 AM - 8:00 PM",
+    "salario": "$800000",
+    "contacto": "3245678901",
+    "fechaHoraReserva": "2023-09-24T17:00",
+    "numComensales": "4",
+    "mesa": "3",
+    "id_mesas": "3"
+  })
+  
+db.venta.insertOne({
+    "id_venta": "1",
+    "fechaVenta": "2023-09-20",
+    "Cajero": "juanito123",
+    "totalVenta": "150000",
+    "metodoPago": "Tarjeta",
+    "mesa": "2",
+    "productos_vendidos": [
+      {"nombre": "Pollo a la Parrilla", "cantidad": "2", "precio_unitario": "$20000"},
+      {"nombre": "Ensalada César", "cantidad": "3", "precio_unitario": "$15000"},
+      {"nombre": "Refresco de Limón", "cantidad": "4", "precio_unitario": "$5000"}
+    ],
+    "cantidad": "9",
+    "precio_unitario": "$17500",
+    "id_usuarios": "1",
+    "id_mesa": "2",
+    "id_facturacion": "1"
+  })
+  db.venta.insertOne({
+    "id_venta": "2",
+    "fechaVenta": "2023-09-21",
+    "Cajero": "laura444",
+    "totalVenta": "120000",
+    "metodoPago": "Efectivo",
+    "mesa": "1",
+    "productos_vendidos": [
+      {"nombre": "Pasta Alfredo", "cantidad": "2", "precio_unitario": "$18000"},
+      {"nombre": "Ensalada Mixta", "cantidad": "2", "precio_unitario": "$12000"},
+      {"nombre": "Agua Mineral", "cantidad": "4", "precio_unitario": "$3000"}
+    ],
+    "cantidad": "8",
+    "precio_unitario": "$15000",
+    "id_usuarios": "10",
+    "id_mesa": "1",
+    "id_facturacion": "2"
+  })
+  db.venta.insertOne({
+    "id_venta": "3",
+    "fechaVenta": "2023-09-22",
+    "Cajero": "lucia555",
+    "totalVenta": "180000",
+    "metodoPago": "Tarjeta",
+    "mesa": "3",
+    "productos_vendidos": [
+      {"nombre": "Salmón a la Parrilla", "cantidad": "1", "precio_unitario": "$25000"},
+      {"nombre": "Ensalada de Espinacas", "cantidad": "2", "precio_unitario": "$10000"},
+      {"nombre": "Vino Tinto", "cantidad": "2", "precio_unitario": "$20000"}
+    ],
+    "cantidad": "5",
+    "precio_unitario": "$36000",
+    "id_usuarios": "8",
+    "id_mesa": "4",
+    "id_facturacion": "3"
+  })
+  db.venta.insertOne({
+    "id_venta": "4",
+    "fechaVenta": "2023-09-23",
+    "Cajero": "ana222",
+    "totalVenta": "200000",
+    "metodoPago": "Efectivo",
+    "mesa": "1",
+    "productos_vendidos": [
+      {"nombre": "Hamburguesa Clásica", "cantidad": "3", "precio_unitario": "$15000"},
+      {"nombre": "Papas Fritas", "cantidad": "2", "precio_unitario": "$5000"},
+      {"nombre": "Gaseosa Cola", "cantidad": "4", "precio_unitario": "$4000"}
+    ],
+    "cantidad": "9",
+    "precio_unitario": "$17778",
+    "id_usuarios": "6",
+    "id_mesa": "1",
+    "id_facturacion": "4"
+  })
+  db.venta.insertOne({
+    "id_venta": "5",
+    "fechaVenta": "2023-09-24",
+    "Cajero": "carlos777",
+    "totalVenta": "140000",
+    "metodoPago": "Tarjeta",
+    "mesa": "3",
+    "productos_vendidos": [
+      {"nombre": "Pizza Margarita", "cantidad": "2", "precio_unitario": "$16000"},
+      {"nombre": "Ensalada César", "cantidad": "2", "precio_unitario": "$15000"},
+      {"nombre": "Cerveza Artesanal", "cantidad": "3", "precio_unitario": "$7000"}
+    ],
+    "cantidad": "7",
+    "precio_unitario": "$20000",
+    "id_usuarios": "7",
+    "id_mesa": "3",
+    "id_facturacion": "5"
+  })
+  db.venta.insertOne({
+    "id_venta": "6",
+    "fechaVenta": "2023-09-25",
+    "Cajero": "diegito999",
+    "totalVenta": "160000",
+    "metodoPago": "Efectivo",
+    "mesa": "4",
+    "productos_vendidos": [
+      {"nombre": "Pasta Carbonara", "cantidad": "2", "precio_unitario": "$18000"},
+      {"nombre": "Ensalada de Frutas", "cantidad": "2", "precio_unitario": "$10000"},
+      {"nombre": "Jugo de Naranja", "cantidad": "4", "precio_unitario": "$3000"}
+    ],
+    "cantidad": "8",
+    "precio_unitario": "$15000",
+    "id_usuarios": "9",
+    "id_mesa": "4",
+    "id_facturacion": "6"
+  })
+  db.venta.insertOne({
+    "id_venta": "7",
+    "fechaVenta": "2023-09-26",
+    "Cajero": "lucia555",
+    "totalVenta": "190000",
+    "metodoPago": "Tarjeta",
+    "mesa": "3",
+    "productos_vendidos": [
+      {"nombre": "Sushi Variado", "cantidad": "1", "precio_unitario": "$30000"},
+      {"nombre": "Sopa Miso", "cantidad": "2", "precio_unitario": "$12000"},
+      {"nombre": "Té Verde", "cantidad": "3", "precio_unitario": "$5000"}
+    ],
+    "cantidad": "6",
+    "precio_unitario": "$31667",
+    "id_usuarios": "8",
+    "id_mesa": "3",
+    "id_facturacion": "7"
+  })
+  
+
+db.mesa.insertOne({
+    "id_mesa": "1",
+    "numeroMesa": "101",
+    "capacidad": "4",
+    "estado": "Disponible"
+  })
+  db.mesa.insertOne({
+    "id_mesa": "2",
+    "numeroMesa": "102",
+    "capacidad": "6",
+    "estado": "Ocupada"
+  })
+  db.mesa.insertOne({
+    "id_mesa": "3",
+    "numeroMesa": "103",
+    "capacidad": "2",
+    "estado": "Reservada"
+  })
+  db.mesa.insertOne({
+    "id_mesa": "4",
+    "numeroMesa": "104",
+    "capacidad": "8",
+    "estado": "Disponible"
+  })
+  db.mesa.insertOne({
+    "id_mesa": "5",
+    "numeroMesa": "105",
+    "capacidad": "4",
+    "estado": "Ocupada"
+  })
+  db.mesa.insertOne({
+    "id_mesa": "6",
+    "numeroMesa": "106",
+    "capacidad": "6",
+    "estado": "Disponible"
+  })
+  db.mesa.insertOne({
+    "id_mesa": "7",
+    "numeroMesa": "107",
+    "capacidad": "4",
+    "estado": "Reservada"
+  })
+  
+
+db.facturacion.insertOne({
+    "id_facturacion": "1",
+    "hora": "18:30",
+    "fecha": "2023-09-20",
+    "platos": ["Pollo a la Parrilla", "Ensalada César"],
+    "bebidas": ["Refresco de Limón"],
+    "cantidad_platos": "3",
+    "valor_unitario": "$15000",
+    "valor_total": "$45000",
+    "fecha_pedido": "2023-09-20",
+    "hora_solicitud": "18:00",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Sin cebolla",
+    "id_mesa": "2",
+    "id_categoria": "1",
+    "id_caja": "1"
+  })
+  db.facturacion.insertOne({
+    "id_facturacion": "2",
+    "hora": "19:15",
+    "fecha": "2023-09-21",
+    "platos": ["Pasta Alfredo", "Ensalada Mixta"],
+    "bebidas": ["Agua Mineral"],
+    "cantidad_platos": "4",
+    "valor_unitario": "$14000",
+    "valor_total": "$56000",
+    "fecha_pedido": "2023-09-21",
+    "hora_solicitud": "19:00",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Sin ajo",
+    "id_mesa": "1",
+    "id_categoria": "2",
+    "id_caja": "2"
+  })
+  db.facturacion.insertOne({
+    "id_facturacion": "3",
+    "hora": "20:00",
+    "fecha": "2023-09-22",
+    "platos": ["Salmón a la Parrilla", "Ensalada de Espinacas"],
+    "bebidas": ["Vino Tinto"],
+    "cantidad_platos": "3",
+    "valor_unitario": "$25000",
+    "valor_total": "$75000",
+    "fecha_pedido": "2023-09-22",
+    "hora_solicitud": "19:30",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Extra de limón",
+    "id_mesa": "4",
+    "id_categoria": "3",
+    "id_caja": "3"
+  })
+  db.facturacion.insertOne({
+    "id_facturacion": "4",
+    "hora": "21:30",
+    "fecha": "2023-09-23",
+    "platos": ["Hamburguesa Clásica", "Papas Fritas"],
+    "bebidas": ["Gaseosa Cola"],
+    "cantidad_platos": "5",
+    "valor_unitario": "$12000",
+    "valor_total": "$60000",
+    "fecha_pedido": "2023-09-23",
+    "hora_solicitud": "21:00",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Sin ketchup",
+    "id_mesa": "1",
+    "id_categoria": "4",
+    "id_caja": "4"
+  })
+  db.facturacion.insertOne({
+    "id_facturacion": "5",
+    "hora": "19:45",
+    "fecha": "2023-09-24",
+    "platos": ["Pizza Margarita", "Ensalada César"],
+    "bebidas": ["Cerveza Artesanal"],
+    "cantidad_platos": "3",
+    "valor_unitario": "$17000",
+    "valor_total": "$51000",
+    "fecha_pedido": "2023-09-24",
+    "hora_solicitud": "19:15",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Extra de queso",
+    "id_mesa": "3",
+    "id_categoria": "1",
+    "id_caja": "5"
+  })
+  db.facturacion.insertOne({
+    "id_facturacion": "6",
+    "hora": "22:00",
+    "fecha": "2023-09-25",
+    "platos": ["Pasta Carbonara", "Ensalada de Frutas"],
+    "bebidas": ["Jugo de Naranja"],
+    "cantidad_platos": "4",
+    "valor_unitario": "$11000",
+    "valor_total": "$44000",
+    "fecha_pedido": "2023-09-25",
+    "hora_solicitud": "21:30",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Extra de piña",
+    "id_mesa": "4",
+    "id_categoria": "2",
+    "id_caja": "6"
+  })
+  db.facturacion.insertOne({
+    "id_facturacion": "7",
+    "hora": "21:15",
+    "fecha": "2023-09-26",
+    "platos": ["Sushi Variado", "Sopa Miso"],
+    "bebidas": ["Té Verde"],
+    "cantidad_platos": "3",
+    "valor_unitario": "$18000",
+    "valor_total": "$54000",
+    "fecha_pedido": "2023-09-26",
+    "hora_solicitud": "20:45",
+    "estado_pedido": "Entregado",
+    "notas_adicionales": "Sin wasabi",
+    "id_mesa": "3",
+    "id_categoria": "3",
+    "id_caja": "7"
+  })
+  
+
+db.transacciones.insertOne({
+    "id_transacciones": "1",
+    "fecha_hora_transaccion": "2023-09-20T10:30:00",
+    "tipo_transaccion": "Ingreso",
+    "descripcion_transaccion": "Venta de productos",
+    "nombre_cuenta": "Cuenta principal",
+    "tipo_cuenta": "Corriente",
+    "saldo_actual": "500000",
+    "fuente_ingresos": "Ventas",
+    "monto_ingreso": "150000",
+    "id_caja": "1"
+  })
+  db.transacciones.insertOne({
+    "id_transacciones": "2",
+    "fecha_hora_transaccion": "2023-09-21T12:15:00",
+    "tipo_transaccion": "Egreso",
+    "descripcion_transaccion": "Compra de materia prima",
+    "nombre_cuenta": "Cuenta proveedores",
+    "tipo_cuenta": "Corriente",
+    "saldo_actual": "450000",
+    "fuente_ingresos": "Proveedores",
+    "monto_ingreso": "20000",
+    "id_caja": "2"
+  })
+  db.transacciones.insertOne({
+    "id_transacciones": "3",
+    "fecha_hora_transaccion": "2023-09-22T15:00:00",
+    "tipo_transaccion": "Ingreso",
+    "descripcion_transaccion": "Pago de cliente",
+    "nombre_cuenta": "Cuenta principal",
+    "tipo_cuenta": "Corriente",
+    "saldo_actual": "470000",
+    "fuente_ingresos": "Clientes",
+    "monto_ingreso": "30000",
+    "id_caja": "3"
+  })
+  db.transacciones.insertOne({
+    "id_transacciones": "4",
+    "fecha_hora_transaccion": "2023-09-23T18:45:00",
+    "tipo_transaccion": "Egreso",
+    "descripcion_transaccion": "Pago de sueldos",
+    "nombre_cuenta": "Cuenta sueldos",
+    "tipo_cuenta": "Ahorro",
+    "saldo_actual": "440000",
+    "fuente_ingresos": "Empleados",
+    "monto_ingreso": "30000",
+    "id_caja": "4"
+  })
+  db.transacciones.insertOne({
+    "id_transacciones": "5",
+    "fecha_hora_transaccion": "2023-09-24T11:20:00",
+    "tipo_transaccion": "Ingreso",
+    "descripcion_transaccion": "Venta de productos",
+    "nombre_cuenta": "Cuenta principal",
+    "tipo_cuenta": "Corriente",
+    "saldo_actual": "470000",
+    "fuente_ingresos": "Ventas",
+    "monto_ingreso": "25000",
+    "id_caja": "5"
+  })
+  db.transacciones.insertOne({
+    "id_transacciones": "6",
+    "fecha_hora_transaccion": "2023-09-25T14:00:00",
+    "tipo_transaccion": "Egreso",
+    "descripcion_transaccion": "Compra de utensilios de cocina",
+    "nombre_cuenta": "Cuenta gastos generales",
+    "tipo_cuenta": "Corriente",
+    "saldo_actual": "440000",
+    "fuente_ingresos": "Proveedores",
+    "monto_ingreso": "30000",
+    "id_caja": "6"
+  })
+  db.transacciones.insertOne({
+    "id_transacciones": "7",
+    "fecha_hora_transaccion": "2023-09-26T17:30:00",
+    "tipo_transaccion": "Ingreso",
+    "descripcion_transaccion": "Pago de cliente",
+    "nombre_cuenta": "Cuenta principal",
+    "tipo_cuenta": "Corriente",
+    "saldo_actual": "470000",
+    "fuente_ingresos": "Clientes",
+    "monto_ingreso": "30000",
+    "id_caja": "7"
+  })
+  
+
+db.caja.insertOne({
+    id_caja: "CAJA001",
+    nombre_plato: "Spaghetti Bolognese",
+    precio: 12.99,
+    tipo_pago: "Efectivo",
+    id_facturacion: "FACT001",
+    id_gastos: "GASTOS001"
+  })
+  db.caja.insertOne({
+    id_caja: "CAJA002",
+    nombre_plato: "Pizza Hawaiana",
+    precio: 14.99,
+    tipo_pago: "Tarjeta de crédito",
+    id_facturacion: "FACT002",
+    id_gastos: "GASTOS002"
+  })
+  db.caja.insertOne({
+    id_caja: "CAJA003",
+    nombre_plato: "Ensalada César",
+    precio: 8.99,
+    tipo_pago: "Efectivo",
+    id_facturacion: "FACT003",
+    id_gastos: "GASTOS003"
+  })
+  db.caja.insertOne({
+    id_caja: "CAJA004",
+    nombre_plato: "Sushi Combo",
+    precio: 19.99,
+    tipo_pago: "Tarjeta de débito",
+    id_facturacion: "FACT004",
+    id_gastos: "GASTOS004"
+  })
+  db.caja.insertOne({
+    id_caja: "CAJA005",
+    nombre_plato: "Filete de Salmón",
+    precio: 16.99,
+    tipo_pago: "Efectivo",
+    id_facturacion: "FACT005",
+    id_gastos: "GASTOS005"
+  })
+  db.caja.insertOne({
+    id_caja: "CAJA006",
+    nombre_plato: "Tacos de Carne Asada",
+    precio: 10.99,
+    tipo_pago: "Tarjeta de crédito",
+    id_facturacion: "FACT006",
+    id_gastos: "GASTOS006"
+  })
+  db.caja.insertOne({
+    id_caja: "CAJA007",
+    nombre_plato: "Parrillada Mixta",
+    precio: 24.99,
+    tipo_pago: "Efectivo",
+    id_facturacion: "FACT007",
+    id_gastos: "GASTOS007"
+  })
+
+
+db.gastos.insertOne({
+    id_gastos: "GASTO001",
+    tipo_gastos: "Compras de alimentos",
+    fecha: "2023-09-01",
+    monto: 1500.0,
+    descripcion: "Compra de suministros para el restaurante",
+    fecha_reporte: "2023-09-02",
+    resumen_ingresos_totales: 5000.0,
+    resumen_gastos_totales: 1500.0,
+    ganancias_netas: 3500.0,
+    otros_indicadores: "N/A"
+  })
+  db.gastos.insertOne({
+    id_gastos: "GASTO002",
+    tipo_gastos: "Pago de salarios",
+    fecha: "2023-09-05",
+    monto: 2000.0,
+    descripcion: "Pago de salarios del personal",
+    fecha_reporte: "2023-09-06",
+    resumen_ingresos_totales: 6000.0,
+    resumen_gastos_totales: 3500.0,
+    ganancias_netas: 2500.0,
+    otros_indicadores: "N/A"
+  })
+  db.gastos.insertOne({
+    id_gastos: "GASTO003",
+    tipo_gastos: "Alquiler del local",
+    fecha: "2023-09-10",
+    monto: 1200.0,
+    descripcion: "Pago del alquiler del restaurante",
+    fecha_reporte: "2023-09-11",
+    resumen_ingresos_totales: 6500.0,
+    resumen_gastos_totales: 4700.0,
+    ganancias_netas: 1800.0,
+    otros_indicadores: "N/A"
+  })
+  db.gastos.insertOne({
+    id_gastos: "GASTO004",
+    tipo_gastos: "Publicidad",
+    fecha: "2023-09-15",
+    monto: 500.0,
+    descripcion: "Gastos en campañas de marketing",
+    fecha_reporte: "2023-09-16",
+    resumen_ingresos_totales: 8000.0,
+    resumen_gastos_totales: 5200.0,
+    ganancias_netas: 2800.0,
+    otros_indicadores: "N/A"
+  })
+  db.gastos.insertOne({
+    id_gastos: "GASTO005",
+    tipo_gastos: "Mantenimiento",
+    fecha: "2023-09-20",
+    monto: 300.0,
+    descripcion: "Reparaciones en el restaurante",
+    fecha_reporte: "2023-09-21",
+    resumen_ingresos_totales: 9500.0,
+    resumen_gastos_totales: 5500.0,
+    ganancias_netas: 4000.0,
+    otros_indicadores: "N/A"
+  })
+  db.gastos.insertOne({
+    id_gastos: "GASTO006",
+    tipo_gastos: "Suministros de oficina",
+    fecha: "2023-09-25",
+    monto: 100.0,
+    descripcion: "Compra de material de oficina",
+    fecha_reporte: "2023-09-26",
+    resumen_ingresos_totales: 10500.0,
+    resumen_gastos_totales: 5600.0,
+    ganancias_netas: 4900.0,
+    otros_indicadores: "N/A"
+  })
+  db.gastos.insertOne({
+    id_gastos: "GASTO007",
+    tipo_gastos: "Impuestos",
+    fecha: "2023-09-30",
+    monto: 800.0,
+    descripcion: "Pago de impuestos mensuales",
+    fecha_reporte: "2023-10-01",
+    resumen_ingresos_totales: 12000.0,
+    resumen_gastos_totales: 6400.0,
+    ganancias_netas: 5600.0,
+    otros_indicadores: "N/A"
+  })
+  
+
+db.categoria.insertOne({
+    id_categoria: "CAT001",
+    nombre_plato: "Pasta",
+    descripcion: "Platos de pasta deliciosos",
+    precio: 12.99,
+    tipo_plato: "Italiano",
+    ingredientes: "Pasta, salsa de tomate, queso",
+    categoria_imagen: "pasta.jpg"
+  })
+  db.categoria.insertOne({
+    id_categoria: "CAT002",
+    nombre_plato: "Pizza",
+    descripcion: "Sabrosas pizzas recién horneadas",
+    precio: 14.99,
+    tipo_plato: "Italiano",
+    ingredientes: "Masa, salsa de tomate, queso, pepperoni",
+    categoria_imagen: "pizza.jpg"
+  })
+  db.categoria.insertOne({
+    id_categoria: "CAT003",
+    nombre_plato: "Ensaladas",
+    descripcion: "Ensaladas frescas y saludables",
+    precio: 9.99,
+    tipo_plato: "Ensalada",
+    ingredientes: "Lechuga, tomate, pepino, aderezo",
+    categoria_imagen: "ensalada.jpg"
+  })
+  db.categoria.insertOne({
+    id_categoria: "CAT004",
+    nombre_plato: "Sushi",
+    descripcion: "Sushi fresco y variado",
+    precio: 19.99,
+    tipo_plato: "Japonés",
+    ingredientes: "Arroz, pescado, algas nori",
+    categoria_imagen: "sushi.jpg"
+  })
+  db.categoria.insertOne({
+    id_categoria: "CAT005",
+    nombre_plato: "Carnes a la Parrilla",
+    descripcion: "Carnes jugosas a la parrilla",
+    precio: 16.99,
+    tipo_plato: "Asado",
+    ingredientes: "Carne de res, especias, vegetales",
+    categoria_imagen: "carnes.jpg"
+  })
+  db.categoria.insertOne({
+    id_categoria: "CAT006",
+    nombre_plato: "Tacos",
+    descripcion: "Tacos tradicionales mexicanos",
+    precio: 10.99,
+    tipo_plato: "Mexicano",
+    ingredientes: "Tortilla, carne, salsa, cebolla",
+    categoria_imagen: "tacos.jpg"
+  })
+  db.categoria.insertOne({
+    id_categoria: "CAT007",
+    nombre_plato: "Parrillada Mixta",
+    descripcion: "Variedad de carnes a la parrilla",
+    precio: 24.99,
+    tipo_plato: "Asado",
+    ingredientes: "Carne de res, pollo, cerdo, vegetales",
+    categoria_imagen: "parrillada.jpg"
+  })
+  
